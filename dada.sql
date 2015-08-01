@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.4.4
 -- Dumped by pg_dump version 9.4.4
--- Started on 2015-08-01 23:09:01 CEST
+-- Started on 2015-08-01 23:13:26 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -12,6 +12,45 @@ SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+
+DROP DATABASE dadabase;
+--
+-- TOC entry 2063 (class 1262 OID 16384)
+-- Name: dadabase; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE dadabase WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'fr_FR.UTF-8' LC_CTYPE = 'fr_FR.UTF-8';
+
+
+ALTER DATABASE dadabase OWNER TO postgres;
+
+\connect dadabase
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 5 (class 2615 OID 2200)
+-- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
+--
+
+CREATE SCHEMA public;
+
+
+ALTER SCHEMA public OWNER TO postgres;
+
+--
+-- TOC entry 2064 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
+--
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
 
 --
 -- TOC entry 178 (class 3079 OID 11903)
@@ -214,7 +253,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2015-08-01 23:09:01 CEST
+-- Completed on 2015-08-01 23:13:27 CEST
 
 --
 -- PostgreSQL database dump complete
