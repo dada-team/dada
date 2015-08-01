@@ -151,6 +151,15 @@ ALTER TABLE extract_race_id_seq OWNER TO postgres;
 
 ALTER SEQUENCE extract_race_id_seq OWNED BY extract_race.id;
 
+-- Index: extract_race_json_idx
+
+-- DROP INDEX extract_race_json_idx;
+
+CREATE INDEX extract_race_json_idx
+  ON extract_race
+  USING gin
+  (json);
+
 
 --
 -- TOC entry 175 (class 1259 OID 16423)
