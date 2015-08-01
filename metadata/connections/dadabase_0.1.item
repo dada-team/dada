@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_kUo48DheEeW_gvNAonfqcg" name="dadabase" id="_dzKwADheEeW_gvNAonfqcg" label="dadabase" dataPackage="_hz9jkDhsEeW_gvNAonfqcg" ContextMode="true" ContextId="_kFBIkDheEeW_gvNAonfqcg" contextName="Default" DatabaseType="PostgreSQL" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://localhost:5433/dadabase" dbVersionString="V9_X" Port="context.dadabase_Port" Username="context.dadabase_Login" Password="context.dadabase_Password" ServerName="context.dadabase_Server" DatasourceName="" FileFieldName="" SID="context.dadabase_Database" SqlSynthax="Syntaxe SQL" DbmsId="postgres_id" ProductId="POSTGRESQL" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="context.dadabase_Schema">
+    <taggedValue xmi:id="_kUpgADheEeW_gvNAonfqcg" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_kU2UUDheEeW_gvNAonfqcg" tag="package filter" value=""/>
+    <taggedValue xmi:id="_kVOu0DheEeW_gvNAonfqcg" tag="Status" value=""/>
+    <taggedValue xmi:id="_kVOu0TheEeW_gvNAonfqcg" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_kVOu0jheEeW_gvNAonfqcg" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_kVOu0zheEeW_gvNAonfqcg" tag="Description" value=""/>
+    <taggedValue xmi:id="_kVOu1DheEeW_gvNAonfqcg" tag="Author" value=""/>
+    <taggedValue xmi:id="_kVOu1TheEeW_gvNAonfqcg" tag="otherParameter"/>
+    <taggedValue xmi:id="_kVYf0DheEeW_gvNAonfqcg" tag="DB ProductName" value="PostgreSQL"/>
+    <taggedValue xmi:id="_kVYf0TheEeW_gvNAonfqcg" tag="DB ProductVersion" value="9.4.4"/>
+    <taggedValue xmi:id="_kVYf0jheEeW_gvNAonfqcg" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <parameters xmi:id="_kUpgATheEeW_gvNAonfqcg" key="CONN_PARA_KEY_USERNAME" value="postgres"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_hz9jkDhsEeW_gvNAonfqcg" name="dadabase" dataManager="_kUo48DheEeW_gvNAonfqcg">
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_hz9jkThsEeW_gvNAonfqcg" name="public">
+      <ownedElement xsi:type="relational:TdTable" xmi:id="_hz9jkjhsEeW_gvNAonfqcg" name="orchestrator" id="_hKuZUDhsEeW_gvNAonfqcg" label="orchestrator" tableType="TABLE">
+        <taggedValue xmi:id="_hz9jkzhsEeW_gvNAonfqcg" tag="Comment" value=""/>
+        <feature xsi:type="relational:TdColumn" xmi:id="_hz9jlDhsEeW_gvNAonfqcg" name="id" label="id" length="10" sourceType="SERIAL" talendType="id_Integer" key="true" nullable="false">
+          <taggedValue xmi:id="_hz9jlThsEeW_gvNAonfqcg" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_hz9jljhsEeW_gvNAonfqcg" body="" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_hz9jlzhsEeW_gvNAonfqcg" name="SERIAL" numericPrecisionRadix="10" javaDataType="4"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_hz9jmDhsEeW_gvNAonfqcg" name="args" label="args" length="2147483647" sourceType="TEXT" talendType="id_String">
+          <taggedValue xmi:id="_hz9jmThsEeW_gvNAonfqcg" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_hz9jmjhsEeW_gvNAonfqcg" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_hz9jmzhsEeW_gvNAonfqcg" name="TEXT" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_hz9jnDhsEeW_gvNAonfqcg" name="status" label="status" length="5" sourceType="INT2" talendType="id_Short">
+          <taggedValue xmi:id="_hz9jnThsEeW_gvNAonfqcg" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_hz9jnjhsEeW_gvNAonfqcg" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_hz9jnzhsEeW_gvNAonfqcg" name="INT2" numericPrecisionRadix="10" javaDataType="5" nullable="columnNullable"/>
+        </feature>
+      </ownedElement>
+    </ownedElement>
+  </orgomg.cwm.resource.relational:Catalog>
+</xmi:XMI>

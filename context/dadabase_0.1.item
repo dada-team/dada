@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" confirmationNeeded="false" name="Default">
+  <contextParameter comment="" name="dadabase_Schema" prompt="dadabase_Schema?" promptNeeded="false" type="id_String" value="public"/>
+  <contextParameter comment="" name="dadabase_Database" prompt="dadabase_Database?" promptNeeded="false" type="id_String" value="dadabase"/>
+  <contextParameter comment="" name="dadabase_Server" prompt="dadabase_Server?" promptNeeded="false" type="id_String" value="localhost"/>
+  <contextParameter comment="" name="dadabase_Password" prompt="dadabase_Password?" promptNeeded="false" type="id_Password" value="CNlsM2hQx/yKsFREJf9l+Q=="/>
+  <contextParameter comment="" name="dadabase_Login" prompt="dadabase_Login?" promptNeeded="false" type="id_String" value="postgres"/>
+  <contextParameter comment="" name="dadabase_Port" prompt="dadabase_Port?" promptNeeded="false" type="id_String" value="5433"/>
+</talendfile:ContextType>
