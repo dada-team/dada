@@ -176,7 +176,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;INSERT INTO &#xA;  \&quot;&quot;+context.dadabase_Database+&quot;\&quot;.\&quot;&quot;+context.dadabase_Schema+&quot;\&quot;.\&quot;extract_race\&quot; (&#xA; \&quot;id\&quot;, &#xA; \&quot;id_date\&quot;, &#xA; \&quot;status\&quot;,&#xA;\&quot;json\&quot;)&#xA;VALUES (&quot;&#xA;+ &quot;?&quot;&#xA;+ &quot;,&quot;&#xA;+ &quot;?&quot;&#xA;+ &quot;,&quot;&#xA;+ 0&#xA;+ &quot;,&quot;&#xA;+ &quot;?::jsonb&quot;&#xA;+ &quot;)&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;INSERT INTO &#xA; \&quot;&quot;+context.dadabase_Database+&quot;\&quot;.\&quot;&quot;+context.dadabase_Schema+&quot;\&quot;.\&quot;extract_race\&quot; (&#xA; \&quot;id\&quot;, &#xA; \&quot;id_date\&quot;, &#xA; \&quot;json\&quot;,&#xA; \&quot;filename\&quot;,&#xA; \&quot;date_insert\&quot;)&#xA;VALUES (&quot;&#xA;+ &quot;?,&quot;&#xA;+ &quot;?,&quot;&#xA;+ &quot;?::jsonb,&quot;&#xA;+ &quot;?,&quot;&#xA;+ &quot;now()&quot; &#xA;+ &quot;)&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
     <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
     <elementParameter field="COLUMN_LIST" name="RECORD_SET_COLUMN" value="id"/>
@@ -191,6 +191,9 @@
       <elementValue elementRef="PARAMETER_INDEX" value="3"/>
       <elementValue elementRef="PARAMETER_TYPE" value="String"/>
       <elementValue elementRef="PARAMETER_VALUE" value="(String)globalMap.get(&quot;content&quot;)"/>
+      <elementValue elementRef="PARAMETER_INDEX" value="4"/>
+      <elementValue elementRef="PARAMETER_TYPE" value="String"/>
+      <elementValue elementRef="PARAMETER_VALUE" value="((String)globalMap.get(&quot;tFileList_1_CURRENT_FILE&quot;))"/>
     </elementParameter>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>

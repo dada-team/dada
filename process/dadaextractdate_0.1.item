@@ -111,8 +111,8 @@
     <elementParameter field="MEMO_JAVA" name="COMMAND" value="&quot;cmd /c echo HELLO&quot;"/>
     <elementParameter field="RADIO" name="USE_ARRAY_COMMAND" value="true"/>
     <elementParameter field="TABLE" name="ARRAY_COMMAND">
-      <elementValue elementRef="VALUE" value="java"/>
-      <elementValue elementRef="VALUE" value="-jar"/>
+      <elementValue elementRef="VALUE" value="&quot;java&quot;"/>
+      <elementValue elementRef="VALUE" value="&quot;-jar&quot;"/>
       <elementValue elementRef="VALUE" value="context.javaexe"/>
       <elementValue elementRef="VALUE" value="context.args"/>
       <elementValue elementRef="VALUE" value="context.path"/>
