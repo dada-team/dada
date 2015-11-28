@@ -64,6 +64,8 @@ dd[,place:=as.numeric(place)]
 dd[place!=-1,place:=place+1]
 dd[place!=-1,pronostic_expected:=pronostic_place/place]
 dd[,date:=as.Date(date,format="%Y-%m-%d")]
+
+
 setkey(dd,"horse_name")
 dd <- dd[dd,allow.cartesian=T][date>=i.date]
 dd[,horse_mean_overall:=mean(1/i.place[date!=i.date]),by=list(horse_name,race_prix,date)]
@@ -72,21 +74,6 @@ dd[,horse_mean_overall_race_price_value:=mean(1/i.place[date!=i.date&race_price_
 dd[,horse_mean_overall_race_city:=mean(1/i.place[date!=i.date&race_city==i.race_city]),by=list(horse_name,race_prix,date)]
 dd[,horse_mean_overall_race_age:=mean(1/i.place[date!=i.date&horse_age==i.horse_age]),by=list(horse_name,race_prix,date)]
 dd <- dd[!duplicated(paste0(horse_name,race_prix,date)),list(id_race,pronostiqueur,horse_name,pronostic_place,horse_age,horse_sex,corde,oeillere,record,distance,horse_last_result,place,cote,jockey,jockey_poids,trainer,date,race_city,race_prix,race_hour,race_distance,race_price_value,race_sex,race_handicap,race_type,race_nb_horse,horse_race_count,pronostic_expected,horse_mean_overall,horse_mean_overall_race_type,horse_mean_overall_race_price_value,horse_mean_overall_race_city,horse_mean_overall_race_age)]
-#tests
-#dd[,horse_mean_overall:=mean(1/place[place!=-1]),by=horse_name]
-#dd[,horse_mean_overall_race_type:=mean(1/place[place!=-1]),by=list(horse_name,race_type)]
-#dd[,horse_mean_overall_race_price_value:=mean(1/place[place!=-1]),by=list(horse_name,race_price_value)]
-#dd[,horse_mean_overall_race_city:=mean(1/place[place!=-1]),by=list(horse_name,race_city)]
-#dd[,horse_mean_overall_race_age:=mean(1/place[place!=-1]),by=list(horse_name,race_city)]
-
-#load("dd")
-#dt[,id_jockey:=as.factor(jockey_name)]
-#dt[,id_jockey:=as.numeric(id_jockey)]
-#dt <- dt[,list(id_jockey,horse_name,race_prix,date,race_type,race_price_value,race_city,horse_age,jockey_name)]
-#head(dt[,list(id_jockey,jockey_name)])
-#dbWriteTable(con,"dt",dt,append=T)
-#tables()
-##ddr <- data.table(dbGetQuery(con,"SELECT * FROM dt dt1 JOIN dt dt2 USING (id_jockey) WHERE dt1.date >= dt2.date"))
 
 setnames(dd,"jockey","jockey_name")
 dd[,jockey_name:=as.factor(jockey_name)]
@@ -115,12 +102,6 @@ dt3 <- rbindlist(list(dt3,dt2))
 }
 save(dt3,file="dt2"); rm(dt3); gc()
 
-#tests
-#dd[,jockey_mean_overall:=mean(1/place[place!=-1]),by=jockey_name]
-#dd[,jockey_mean_overall_race_type:=mean(1/place[place!=-1]),by=list(jockey_name,race_type)]
-#dd[,jockey_mean_overall_race_price_value:=mean(1/place[place!=-1]),by=list(jockey_name,race_price_value)]
-#dd[,jockey_mean_overall_race_city:=mean(1/place[place!=-1]),by=list(jockey_name,race_city)]
-#dd[,jockey_mean_overall_race_age:=mean(1/place[place!=-1]),by=list(jockey_name,race_city)]
 
 load("dd")
 setnames(dd,"trainer","trainer_name")
@@ -153,22 +134,16 @@ load("dd")
 load("dt2")
 setkey(dd,"horse_name","race_prix","jockey_name","date")
 setkey(dt2,"horse_name","race_prix","jockey_name","date")
-dd <- dt2[dd]
-rm(dt2);gc();
+dd <- dt3[dd]
+rm(dt3);gc();
 
 load("dt3")
 setkey(dd,"horse_name","race_prix","trainer_name","date")
 setkey(dt3,"horse_name","race_prix","trainer_name","date")
 dd <- dt3[dd]
-rm(dt2);gc();
+rm(dt3);gc();
 
 
-#tests
-#dd[,trainer_mean_overall:=mean(1/place[place!=-1]),by=trainer_name]
-#dd[,trainer_mean_overall_race_type:=mean(1/place[place!=-1]),by=list(trainer_name,race_type)]
-#dd[,trainer_mean_overall_race_price_value:=mean(1/place[place!=-1]),by=list(trainer_name,race_price_value)]
-#dd[,trainer_mean_overall_race_city:=mean(1/place[place!=-1]),by=list(trainer_name,race_city)]
-#dd[,trainer_mean_overall_race_age:=mean(1/place[place!=-1]),by=list(trainer_name,race_city)]
 
 dd[,horse_last_result:=NULL]
 dd <- dd[][order(id_race,place,decreasing=T)]
