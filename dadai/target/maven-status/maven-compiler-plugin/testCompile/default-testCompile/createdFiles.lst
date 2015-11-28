@@ -1,0 +1,7 @@
+test/java/controllers/data/TurfoWpRaceParserTest.class
+test/java/controllers/sniffers/TurfoRaceSnifferTest.class
+test/java/controllers/data/TurfoRaceLauncherFunctionalTest.class
+test/java/controllers/data/TurfoWpDetailsRaceParserTest.class
+test/java/controllers/data/TurfoWpHorseParserTest.class
+test/java/controllers/data/WpRaceManagerTest.class
+test/java/model/impl/WpHorseTurfoTest.class
